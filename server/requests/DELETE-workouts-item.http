@@ -1,0 +1,2 @@
+DELETE /workouts/1/item/4
+Host: localhost:5000

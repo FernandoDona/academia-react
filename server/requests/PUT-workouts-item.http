@@ -1,0 +1,11 @@
+PUT /workouts/1/item/1
+Host: localhost:5000
+Content-Type: application/json
+
+{
+    "id": 1,
+    "exercise": "Supino Reto Alterado",
+    "series": 2,
+    "repetitions": 13,
+    "weight": 25
+}

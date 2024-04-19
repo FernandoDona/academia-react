@@ -1,0 +1,15 @@
+# list itens to fill a gitignore file for react
+node_modules
+build
+.DS_Store
+.env
+.cache
+dist
+coverage
+*.log
+*.log.*
+*.log-*
+*.log/*
+*.log-*/
+*.log.*
+

@@ -1,0 +1,23 @@
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+}
+.page-title {
+    font-size: 32px;
+    color: aliceblue;
+}
+.add-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 25px;
+    bottom: 110px;
+    height: 60px;
+    width: 60px;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 50px;
+}

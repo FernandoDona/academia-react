@@ -1,0 +1,10 @@
+POST /workouts/1/item
+Host: localhost:5000
+Content-Type: application/json
+
+{
+    "exercise": "Flexão",
+    "series": 2,
+    "repetitions": 13,
+    "weight": 25
+}
