@@ -44,11 +44,23 @@ export default function WorkoutItemForm({ onSubmit, submitText }) {
     return (
         <>
             {workoutItem || submitText === 'Criar' ? (
-                <form onSubmit={handleSubmit}>
-                    <TextInput label='Exercício' name='exercise' value={workoutItem?.exercise} />
-                    <NumberInput label='Series' name="series" value={workoutItem?.series} />
-                    <NumberInput label='Repetições' name="repetitions" value={workoutItem?.repetitions} />
-                    <NumberInput label='Carga' name="weight" value={workoutItem?.weight} />
+                <form className="add-form" onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                        <label htmlFor='exercise' className="form-label">Exercício</label>
+                        <TextInput className='form-control' name='exercise' value={workoutItem?.exercise} />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="series" className="form-label">Séries</label>
+                        <NumberInput className='form-control' name="series" min='0' value={workoutItem?.series} />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="repetitions" className="form-label">Repetições</label>
+                        <NumberInput className='form-control' name="repetitions" min='0' value={workoutItem?.repetitions} />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="weight" className="form-label">Carga</label>
+                        <NumberInput className='form-control' name="weight" min='0' value={workoutItem?.weight} />
+                    </div>
                     <div>
                         <button type="submit" className="btn btn-primary">{submitText}</button>
                     </div>

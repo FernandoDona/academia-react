@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react"
 import { CreateWorkout, GetWorkouts, DeleteWorkout } from '../services/workoutServices';
 import WorkoutForm from './WorkoutForm';
+import WorkoutCard from '../components/WorkoutCard';
 
 export default function Workouts () {
     const [workouts, setWorkouts] = useState([]);
@@ -51,24 +52,18 @@ export default function Workouts () {
     }
     
     return (
-        <section className='container'>
-            <div className='d-flex justify-content-between pb-2 pt-2 pe-4'>
-                <h2>Workouts</h2>
-                <button onClick={() => setShowCreateForm(!showCreateForm) } className='btn btn-primary'>Novo</button>
+        <section>
+            <div className='container'>
+                <h2>Treinos</h2>
             </div>
             {showCreateForm && <WorkoutForm onSubmit={handleSubmit}/>}
-            <ul className='list-group'>
-                {workouts.map((workout) => {
-                    return (
-                        <li key={workout.id} className='d-flex justify-content-between list-group-item'>
-                            <Link to={`${workout.id}`} className='text-center'>
-                                {workout.name}
-                            </Link>
-                            <button onClick={() => handleDelete(workout.id)} className='btn btn-danger'>Excluir</button>
-                        </li>
-                    )
-                })}
-            </ul>
+            <div className='container'>
+                <div className='row'>
+                    {workouts.map((workout) => {
+                        return <WorkoutCard workout={workout} />
+                    })}
+                </div>
+            </div>
         </section>
     )
 }

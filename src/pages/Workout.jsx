@@ -69,13 +69,17 @@ function Workout() {
 
   return (
     <section>
-      <div className='d-flex justify-content-between'>
+      <div class="page-header">
+        <h2 class="page-title">Peito</h2>
+        <button type="button" class="btn btn-success">Iniciar</button>
+      </div>
+      {/* <div className='d-flex justify-content-between'>
         <h2>Treino {workout.name}</h2> { 
           location.pathname === `/workouts/${id}` ? 
           <Link to="item/new" className='btn btn-primary' onClick={() => setShowNewItemLink(!showNewItemLink)}>Novo Item</Link> : 
           <Link to={`/workouts/${id}`} className='btn btn-primary'>Voltar</Link>
         }
-      </div>
+      </div> */}
       <div>
         <Routes>
           <Route index element={<WorkoutItemList workout={workout} deleteItem={handleDeleteItemClick}></WorkoutItemList>}></Route>
