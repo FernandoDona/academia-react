@@ -2,6 +2,6 @@ import { Link } from "react-router-dom";
 
 export default function AddButton({to}) {
     return (
-        <Link to={to} class="add-button"><i class="fa-solid fa-plus fa-2x"></i></Link>
+        <Link to={to} className="add-button"><i className="fa-solid fa-plus fa-2x"></i></Link>
     )
 }

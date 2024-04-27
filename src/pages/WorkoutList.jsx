@@ -8,11 +8,7 @@ function Workout() {
   }
 
   return (
-      <section className="container text-center">
-          <div className="row">
-              <h2 className="col-9 text-center">Treinos</h2>
-              <Link to="new" className="btn btn-primary col-3">Novo Item</Link>
-          </div>
+      <section className="container pe-0 ps-0">
           <div className="row">
           <Routes>
               <Route index element={<WorkoutItemList workout={workout}></WorkoutItemList>}></Route>

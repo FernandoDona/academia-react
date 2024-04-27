@@ -38,7 +38,7 @@ export default function WorkoutItemForm({ onSubmit, submitText }) {
         }
         console.log({ ...workoutItem, ...finalItem })
         onSubmit({ ...workoutItem, ...finalItem })
-        navigate(`/workouts/${id}`);
+        navigate(`/treinos/${id}`);
     }
 
     return (

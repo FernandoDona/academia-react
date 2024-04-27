@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { handleInputChange } from '../utils/utils.js';
 
 function NumberInput({name, value, className, min, max, required = true}) {
     const [inputValue, setInputValue] = useState(value);

@@ -9,7 +9,7 @@ function Workout() {
   const [workout, setWorkout] = useState({});
   const { id } = useParams();
   const location = useLocation();
-  
+
   useEffect(() => {
     console.log('useEffect!!')
     let subscribed = true;
@@ -25,12 +25,12 @@ function Workout() {
       .catch((err) => console.error(err));
 
     return () => subscribed = false;
-  }, [ id ])
+  }, [id])
 
   function handleUpdateSubmit(workoutItem) {
     const updateItem = async () => {
       await UpdateWorkoutItem(id, workoutItem);
-      
+
       console.log('Atualizou item');
       let json = await GetWorkout(id);
       setWorkout(json);
@@ -39,11 +39,11 @@ function Workout() {
     updateItem()
       .catch(err => console.error(err))
   }
-  
+
   function handleCreateSubmit(workoutItem) {
     const createItem = async () => {
       await CreateWorkoutItem(id, workoutItem);
-      
+
       console.log('Criou item');
 
       let json = await GetWorkout(id);
@@ -62,32 +62,23 @@ function Workout() {
       let json = await GetWorkout(id);
       setWorkout(json);
     }
-    
+
     deleteItem()
       .catch(err => console.error(err));
   }
 
   return (
-    <section>
-      <div class="page-header">
-        <h2 class="page-title">Peito</h2>
-        <button type="button" class="btn btn-success">Iniciar</button>
+    <>
+      <div className="page-header">
+        <h2 className="page-title">{workout.name}</h2>
+        <button type="button" className="btn btn-success">Iniciar</button>
       </div>
-      {/* <div className='d-flex justify-content-between'>
-        <h2>Treino {workout.name}</h2> { 
-          location.pathname === `/workouts/${id}` ? 
-          <Link to="item/new" className='btn btn-primary' onClick={() => setShowNewItemLink(!showNewItemLink)}>Novo Item</Link> : 
-          <Link to={`/workouts/${id}`} className='btn btn-primary'>Voltar</Link>
-        }
-      </div> */}
-      <div>
-        <Routes>
-          <Route index element={<WorkoutItemList workout={workout} deleteItem={handleDeleteItemClick}></WorkoutItemList>}></Route>
-          <Route path='item/new' element={<WorkoutItemForm onSubmit={handleCreateSubmit} submitText='Criar'></WorkoutItemForm>}></Route>
-          <Route path='item/edit/:itemId' element={<WorkoutItemForm onSubmit={handleUpdateSubmit} submitText='Editar'></WorkoutItemForm>}></Route>
-        </Routes>
-      </div>
-    </section>
+      <Routes>
+        <Route index element={<WorkoutItemList workout={workout} deleteItem={handleDeleteItemClick}></WorkoutItemList>}></Route>
+        <Route path='item/new' element={<WorkoutItemForm onSubmit={handleCreateSubmit} submitText='Criar'></WorkoutItemForm>}></Route>
+        <Route path='item/edit/:itemId' element={<WorkoutItemForm onSubmit={handleUpdateSubmit} submitText='Editar'></WorkoutItemForm>}></Route>
+      </Routes>
+    </>
   )
 }
 

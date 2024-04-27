@@ -4,16 +4,14 @@ import WorkoutItem from "./WorkoutItem"
 export default function WorkoutItemList({workout, deleteItem}) {
     return (
         <>
-            <div class="container pe-0 ps-0">
-                <div class="row">
+            <div className="container pe-0 ps-0">
+                <div className="row">
                     {workout?.items?.map(wi =>
-                        <tr key={wi.id}>
-                            <WorkoutItem item={wi} deleteItem={deleteItem}></WorkoutItem>
-                        </tr>
+                        <WorkoutItem item={wi} deleteItem={deleteItem}></WorkoutItem>
                     )}
                 </div>
             </div>
-            <AddButton />
+            <AddButton to='item/new' />
         </>
     )
 }

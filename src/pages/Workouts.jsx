@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { CreateWorkout, GetWorkouts, DeleteWorkout } from '../services/workoutServices';
 import WorkoutForm from './WorkoutForm';
 import WorkoutCard from '../components/WorkoutCard';
+import AddButton from '../components/AddButton';
 
 export default function Workouts () {
     const [workouts, setWorkouts] = useState([]);
@@ -64,6 +65,7 @@ export default function Workouts () {
                     })}
                 </div>
             </div>
+            <AddButton to='/treinos/new'></AddButton>
         </section>
     )
 }
