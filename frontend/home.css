@@ -1,0 +1,53 @@
+.home-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 25px 50px 25px;
+}
+
+.home-highlights {
+    width: 100%;
+    max-width: 350px;
+}
+
+.home-highlights .card-subject {
+    font-size: 18px;
+    color: var(--white-bg-color);
+    font-weight: 300;
+}
+
+.home-highlights .card-min {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    
+    border: 1px solid var(--white-bg-color);
+    border-radius: var(--card-border-radius);
+    height: 185px;
+    width: 100%;
+}
+
+.home-highlights .card-min::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('./agachamento.png') center no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.home-highlights .card-min::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.home-highlights .card-title {
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--white-bg-color);
+    z-index: 1;
+    margin-left: 10%;
+}
